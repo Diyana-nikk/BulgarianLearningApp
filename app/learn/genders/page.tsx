@@ -69,18 +69,18 @@ export default function GendersPage() {
       </div>
 
       {/* Overview cards */}
-      <div className="grid grid-cols-3 gap-3 text-center text-sm">
-        <div className="bg-blue-50 border-2 border-blue-200 rounded-2xl p-4">
+      <div className="grid grid-cols-3 gap-2 sm:gap-3 text-center text-sm">
+        <div className="bg-blue-50 border-2 border-blue-200 rounded-2xl p-2 sm:p-4">
           <div className="text-2xl mb-1">♂</div>
           <div className="font-bold text-blue-800">Masculine</div>
           <div className="text-blue-600 mt-1 text-xs">ends in consonant</div>
         </div>
-        <div className="bg-rose-50 border-2 border-rose-200 rounded-2xl p-4">
+        <div className="bg-rose-50 border-2 border-rose-200 rounded-2xl p-2 sm:p-4">
           <div className="text-2xl mb-1">♀</div>
           <div className="font-bold text-rose-800">Feminine</div>
           <div className="text-rose-600 mt-1 text-xs">ends in -а or -я</div>
         </div>
-        <div className="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-4">
+        <div className="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-2 sm:p-4">
           <div className="text-2xl mb-1">◇</div>
           <div className="font-bold text-emerald-800">Neuter</div>
           <div className="text-emerald-600 mt-1 text-xs">ends in -о or -е</div>

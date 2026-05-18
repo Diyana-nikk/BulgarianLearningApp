@@ -18,24 +18,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Top accent stripe — Bulgarian flag colours */}
         <div className="h-1 w-full" style={{ background: "linear-gradient(to right, #ffffff 33%, #00966E 33%, #00966E 66%, #D62612 66%)" }} />
 
-        <header className="bg-white border-b border-gray-100 px-6 py-3 flex items-center gap-3 shadow-sm">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <Logo size={36} />
+        <header className="bg-white border-b border-gray-100 px-3 sm:px-6 py-3 flex items-center gap-3 shadow-sm">
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group shrink-0">
+            <Logo size={32} />
             <div className="flex flex-col leading-none">
-              <span className="font-bold text-lg tracking-tight" style={{ color: "#1A6B45" }}>Хайде!</span>
-              <span className="text-xs text-gray-400 font-normal">Learn Bulgarian</span>
+              <span className="font-bold text-base sm:text-lg tracking-tight" style={{ color: "#1A6B45" }}>Хайде!</span>
+              <span className="text-xs text-gray-400 font-normal hidden sm:block">Learn Bulgarian</span>
             </div>
           </Link>
 
-          <nav className="ml-auto flex gap-1 text-sm font-medium">
-            <Link href="/flashcards" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-green-50 hover:text-green-800 transition-colors">Flashcards</Link>
-            <Link href="/quiz" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-green-50 hover:text-green-800 transition-colors">Quiz</Link>
-            <Link href="/browse" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-green-50 hover:text-green-800 transition-colors">Browse</Link>
-            <Link href="/learn" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-green-50 hover:text-green-800 transition-colors">Learn</Link>
+          <nav className="ml-auto flex gap-0.5 sm:gap-1 text-xs sm:text-sm font-medium">
+            <Link href="/flashcards" className="px-2 sm:px-3 py-1.5 rounded-lg text-gray-600 hover:bg-green-50 hover:text-green-800 transition-colors">Flashcards</Link>
+            <Link href="/quiz" className="px-2 sm:px-3 py-1.5 rounded-lg text-gray-600 hover:bg-green-50 hover:text-green-800 transition-colors">Quiz</Link>
+            <Link href="/browse" className="px-2 sm:px-3 py-1.5 rounded-lg text-gray-600 hover:bg-green-50 hover:text-green-800 transition-colors">Browse</Link>
+            <Link href="/learn" className="px-2 sm:px-3 py-1.5 rounded-lg text-gray-600 hover:bg-green-50 hover:text-green-800 transition-colors">Learn</Link>
           </nav>
         </header>
 
-        <main className="max-w-2xl mx-auto px-4 py-8">{children}</main>
+        <main className="max-w-2xl mx-auto px-4 py-4 sm:py-8">{children}</main>
       </body>
     </html>
   );

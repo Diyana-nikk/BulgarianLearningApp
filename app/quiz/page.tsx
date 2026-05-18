@@ -74,10 +74,10 @@ export default function QuizPage() {
   if (finished) {
     const pct = Math.round((score / questions.length) * 100);
     return (
-      <div className="flex flex-col items-center gap-6 text-center py-12">
-        <div className="text-6xl">{pct >= 80 ? "🏆" : pct >= 50 ? "👍" : "📚"}</div>
-        <h2 className="text-3xl font-bold text-gray-800">Quiz complete!</h2>
-        <p className="text-xl text-gray-600">
+      <div className="flex flex-col items-center gap-6 text-center py-8 sm:py-12">
+        <div className="text-5xl sm:text-6xl">{pct >= 80 ? "🏆" : pct >= 50 ? "👍" : "📚"}</div>
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Quiz complete!</h2>
+        <p className="text-lg sm:text-xl text-gray-600">
           You scored <span className="font-bold text-blue-600">{score}/{questions.length}</span> ({pct}%)
         </p>
         <button
@@ -92,9 +92,9 @@ export default function QuizPage() {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <h1 className="text-2xl font-bold text-gray-800">Quiz</h1>
-        <div className="flex gap-2 flex-wrap justify-end">
+        <div className="flex gap-2 flex-wrap">
           {CATEGORIES.map((c) => (
             <button
               key={c.id}
@@ -122,9 +122,9 @@ export default function QuizPage() {
         <span className="text-green-600 font-medium">✓ {score}</span>
       </div>
 
-      <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 text-center shadow-sm">
+      <div className="bg-white border-2 border-gray-200 rounded-3xl p-5 sm:p-8 text-center shadow-sm">
         <p className="text-sm text-gray-400 mb-2 uppercase tracking-wide">What does this mean?</p>
-        <p className="text-5xl font-bold text-gray-900">{q.word.bulgarian}</p>
+        <p className="text-3xl sm:text-5xl font-bold text-gray-900">{q.word.bulgarian}</p>
         <p className="text-gray-400 italic mt-2">{q.word.transliteration}</p>
       </div>
 

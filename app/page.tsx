@@ -91,7 +91,7 @@ export default function Home() {
     <div className="flex flex-col gap-10">
       {/* Hero */}
       <div className="text-center pt-2">
-        <h1 className="text-5xl font-bold mb-2" style={{ color: "#1A6B45" }}>
+        <h1 className="text-4xl sm:text-5xl font-bold mb-2" style={{ color: "#1A6B45" }}>
           Хайде!
         </h1>
         <p className="text-gray-500 text-base">

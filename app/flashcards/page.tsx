@@ -49,9 +49,9 @@ export default function FlashcardsPage() {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <h1 className="text-2xl font-bold text-gray-800">Flashcards</h1>
-        <div className="flex gap-2 flex-wrap justify-end">
+        <div className="flex gap-2 flex-wrap">
           {CATEGORIES.map((c) => (
             <button
               key={c.id}
@@ -81,19 +81,19 @@ export default function FlashcardsPage() {
       {/* Card */}
       <div
         onClick={() => setFlipped((f) => !f)}
-        className="cursor-pointer select-none bg-white border-2 border-gray-200 rounded-3xl shadow-sm hover:shadow-md transition-shadow min-h-64 flex flex-col items-center justify-center gap-4 p-8 text-center"
+        className="cursor-pointer select-none bg-white border-2 border-gray-200 rounded-3xl shadow-sm hover:shadow-md transition-shadow min-h-48 sm:min-h-64 flex flex-col items-center justify-center gap-4 p-5 sm:p-8 text-center"
       >
         {!flipped ? (
           <>
-            <p className="text-5xl font-bold text-gray-900">{current.bulgarian}</p>
+            <p className="text-3xl sm:text-5xl font-bold text-gray-900">{current.bulgarian}</p>
             {showTranslit && (
-              <p className="text-xl text-gray-400 italic">{current.transliteration}</p>
+              <p className="text-lg sm:text-xl text-gray-400 italic">{current.transliteration}</p>
             )}
             <p className="text-sm text-gray-400 mt-4">Tap to reveal</p>
           </>
         ) : (
           <>
-            <p className="text-4xl font-bold text-blue-700">{current.english}</p>
+            <p className="text-2xl sm:text-4xl font-bold text-blue-700">{current.english}</p>
             <div className="border-t border-gray-100 pt-4 w-full">
               <p className="text-gray-700 font-medium">{current.example_bg}</p>
               <p className="text-gray-400 text-sm mt-1 italic">{current.example_en}</p>
@@ -106,25 +106,25 @@ export default function FlashcardsPage() {
         <button
           onClick={prev}
           disabled={index === 0}
-          className="px-5 py-2 rounded-xl border border-gray-300 text-gray-600 font-medium disabled:opacity-30 hover:bg-gray-50 transition-colors"
+          className="px-3 sm:px-5 py-2 rounded-xl border border-gray-300 text-gray-600 font-medium disabled:opacity-30 hover:bg-gray-50 transition-colors text-sm sm:text-base"
         >
           ← Back
         </button>
 
-        <label className="flex items-center gap-2 text-sm text-gray-500 cursor-pointer">
+        <label className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-500 cursor-pointer">
           <input
             type="checkbox"
             checked={showTranslit}
             onChange={(e) => setShowTranslit(e.target.checked)}
             className="rounded"
           />
-          Show transliteration
+          <span className="hidden sm:inline">Show </span>transliteration
         </label>
 
         {done ? (
           <button
             onClick={restart}
-            className="px-5 py-2 rounded-xl bg-green-600 text-white font-medium hover:bg-green-700 transition-colors"
+            className="px-3 sm:px-5 py-2 rounded-xl bg-green-600 text-white font-medium hover:bg-green-700 transition-colors text-sm sm:text-base"
           >
             Restart 🎉
           </button>
@@ -132,7 +132,7 @@ export default function FlashcardsPage() {
           <button
             onClick={next}
             disabled={index === deck.length - 1}
-            className="px-5 py-2 rounded-xl bg-blue-600 text-white font-medium disabled:opacity-30 hover:bg-blue-700 transition-colors"
+            className="px-3 sm:px-5 py-2 rounded-xl bg-blue-600 text-white font-medium disabled:opacity-30 hover:bg-blue-700 transition-colors text-sm sm:text-base"
           >
             Next →
           </button>
