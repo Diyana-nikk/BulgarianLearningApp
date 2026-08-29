@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const masculineArticle = [
   { without: "мъж", withFull: "мъжът", withShort: "мъжа", translit: "myzh → myzhtyt / myzhа", en: "man → the man" },
@@ -36,7 +37,7 @@ export default function ArticlesPage() {
       </div>
 
       <div>
-        <h1 className="text-2xl font-bold text-gray-800">📌 The — Definite Article</h1>
+        <h1 className="text-2xl font-bold text-gray-800">The — Definite Article</h1>
         <p className="text-gray-500 text-sm mt-1">
           English puts "the" <em>before</em> a word. Bulgarian attaches it to the <em>end</em> of the word as a suffix. The suffix changes depending on the gender and number.
         </p>
@@ -98,8 +99,9 @@ export default function ArticlesPage() {
             </tbody>
           </table>
         </div>
-        <div className="bg-blue-50 border border-blue-200 rounded-xl px-4 py-3 text-sm text-blue-900">
-          💡 In casual speech most Bulgarians use the short form (-а/-я) for everything. The distinction matters more in writing.
+        <div className="bg-blue-50 border border-blue-200 rounded-xl px-4 py-3 text-sm text-blue-900 flex items-start gap-2">
+          <Image src="/images/lightbulb.png" alt="" width={16} height={16} className="shrink-0 mt-0.5 object-contain" />
+          <span>In casual speech most Bulgarians use the short form (-а/-я) for everything. The distinction matters more in writing.</span>
         </div>
       </section>
 

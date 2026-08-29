@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const presentRows = [
   { pronoun: "аз (I)", form: "говоря", translit: "govorya" },
@@ -67,8 +68,9 @@ function ConjTable({ rows }: { rows: { pronoun: string; form: string; translit: 
 
 function Note({ children }: { children: React.ReactNode }) {
   return (
-    <div className="bg-sky-50 border border-sky-200 rounded-xl px-4 py-3 text-sm text-sky-900">
-      💡 {children}
+    <div className="bg-sky-50 border border-sky-200 rounded-xl px-4 py-3 text-sm text-sky-900 flex items-start gap-2">
+      <Image src="/images/lightbulb.png" alt="" width={16} height={16} className="shrink-0 mt-0.5 object-contain" />
+      <span>{children}</span>
     </div>
   );
 }
@@ -81,7 +83,7 @@ export default function TensesPage() {
       </div>
 
       <div>
-        <h1 className="text-2xl font-bold text-gray-800">⏱️ Tenses</h1>
+        <h1 className="text-2xl font-bold text-gray-800">Tenses</h1>
         <p className="text-gray-500 text-sm mt-1">
           Using the verb <strong>говоря</strong> (to speak) as a model. The same endings apply to most regular verbs.
         </p>
@@ -136,7 +138,7 @@ export default function TensesPage() {
       </section>
 
       <div className="bg-sky-50 border border-sky-200 rounded-xl px-4 py-3 text-sm text-sky-900">
-        🎯 <strong>Quick tip:</strong> Learn <em>съм</em> (to be) and <em>имам</em> (to have) first — they are the most used verbs and have irregular forms.
+        <strong>Quick tip:</strong> Learn <em>съм</em> (to be) and <em>имам</em> (to have) first — they are the most used verbs and have irregular forms.
         <br /><br />
         <strong>Аз съм</strong> (az sym) = I am &nbsp;·&nbsp; <strong>Аз имам</strong> (az imam) = I have &nbsp;·&nbsp; <strong>Ще имам</strong> (shte imam) = I will have
       </div>

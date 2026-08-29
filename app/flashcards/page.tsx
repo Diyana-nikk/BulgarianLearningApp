@@ -1,7 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { loadWords, shuffle, CATEGORIES, type Word } from "@/lib/words";
+
+const WORD_IMAGES: Record<string, string> = {
+  water: "/images/water-drop.png",
+  apple: "/images/apple.png",
+  book: "/images/book.png",
+};
 
 export default function FlashcardsPage() {
   const [allWords, setAllWords] = useState<Word[]>([]);
@@ -93,6 +100,15 @@ export default function FlashcardsPage() {
           </>
         ) : (
           <>
+            {WORD_IMAGES[current.english.toLowerCase()] && (
+              <Image
+                src={WORD_IMAGES[current.english.toLowerCase()]}
+                alt=""
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            )}
             <p className="text-2xl sm:text-4xl font-bold text-blue-700">{current.english}</p>
             <div className="border-t border-gray-100 pt-4 w-full">
               <p className="text-gray-700 font-medium">{current.example_bg}</p>
@@ -126,7 +142,7 @@ export default function FlashcardsPage() {
             onClick={restart}
             className="px-3 sm:px-5 py-2 rounded-xl bg-green-600 text-white font-medium hover:bg-green-700 transition-colors text-sm sm:text-base"
           >
-            Restart 🎉
+            Restart
           </button>
         ) : (
           <button

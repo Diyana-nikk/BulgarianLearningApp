@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const masculine = [
   { bg: "мъж", translit: "myzh", en: "man", ending: "consonant" },
@@ -62,7 +63,7 @@ export default function GendersPage() {
       </div>
 
       <div>
-        <h1 className="text-2xl font-bold text-gray-800">⚖️ Genders</h1>
+        <h1 className="text-2xl font-bold text-gray-800">Genders</h1>
         <p className="text-gray-500 text-sm mt-1">
           Bulgarian nouns have three genders: masculine, feminine, and neuter. The gender affects the adjectives, articles and pronouns you use with the noun.
         </p>
@@ -90,29 +91,32 @@ export default function GendersPage() {
       <section className="flex flex-col gap-3">
         <h2 className="font-semibold text-gray-700 flex items-center gap-2"><span className="text-blue-600">♂</span> Masculine nouns</h2>
         <GenderTable rows={masculine} color="bg-blue-50" />
-        <div className="bg-blue-50 border border-blue-200 rounded-xl px-4 py-3 text-sm text-blue-900">
-          💡 Most masculine nouns end in a consonant. Adjectives agreeing with them use their base form: <strong>голям мъж</strong> (big man), <strong>хубав ден</strong> (nice day).
+        <div className="bg-blue-50 border border-blue-200 rounded-xl px-4 py-3 text-sm text-blue-900 flex items-start gap-2">
+          <Image src="/images/lightbulb.png" alt="" width={16} height={16} className="shrink-0 mt-0.5 object-contain" />
+          <span>Most masculine nouns end in a consonant. Adjectives agreeing with them use their base form: <strong>голям мъж</strong> (big man), <strong>хубав ден</strong> (nice day).</span>
         </div>
       </section>
 
       <section className="flex flex-col gap-3">
         <h2 className="font-semibold text-gray-700 flex items-center gap-2"><span className="text-rose-600">♀</span> Feminine nouns</h2>
         <GenderTable rows={feminine} color="bg-rose-50" />
-        <div className="bg-rose-50 border border-rose-200 rounded-xl px-4 py-3 text-sm text-rose-900">
-          💡 Most feminine nouns end in <strong>-а</strong> or <strong>-я</strong>. Adjectives add <strong>-а</strong>: <strong>голяма жена</strong> (big woman), <strong>хубава книга</strong> (nice book). A few feminine nouns end in a consonant (like нощ/night) — these are exceptions to memorise.
+        <div className="bg-rose-50 border border-rose-200 rounded-xl px-4 py-3 text-sm text-rose-900 flex items-start gap-2">
+          <Image src="/images/lightbulb.png" alt="" width={16} height={16} className="shrink-0 mt-0.5 object-contain" />
+          <span>Most feminine nouns end in <strong>-а</strong> or <strong>-я</strong>. Adjectives add <strong>-а</strong>: <strong>голяма жена</strong> (big woman), <strong>хубава книга</strong> (nice book). A few feminine nouns end in a consonant (like нощ/night) — these are exceptions to memorise.</span>
         </div>
       </section>
 
       <section className="flex flex-col gap-3">
         <h2 className="font-semibold text-gray-700 flex items-center gap-2"><span className="text-emerald-600">◇</span> Neuter nouns</h2>
         <GenderTable rows={neuter} color="bg-emerald-50" />
-        <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3 text-sm text-emerald-900">
-          💡 Neuter nouns end in <strong>-о</strong> or <strong>-е</strong>. Adjectives add <strong>-о</strong>: <strong>голямо море</strong> (big sea), <strong>хубаво вино</strong> (nice wine).
+        <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3 text-sm text-emerald-900 flex items-start gap-2">
+          <Image src="/images/lightbulb.png" alt="" width={16} height={16} className="shrink-0 mt-0.5 object-contain" />
+          <span>Neuter nouns end in <strong>-о</strong> or <strong>-е</strong>. Adjectives add <strong>-о</strong>: <strong>голямо море</strong> (big sea), <strong>хубаво вино</strong> (nice wine).</span>
         </div>
       </section>
 
       <div className="bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4 text-sm text-amber-900">
-        <div className="font-bold mb-2">🎯 Summary — adjective endings by gender</div>
+        <div className="font-bold mb-2">Summary — adjective endings by gender</div>
         <div className="grid grid-cols-3 gap-4 text-center">
           <div><div className="font-mono bg-white rounded-lg px-2 py-1 border border-amber-200">голям</div><div className="text-xs mt-1 text-amber-700">masc (base)</div></div>
           <div><div className="font-mono bg-white rounded-lg px-2 py-1 border border-amber-200">голям<strong>а</strong></div><div className="text-xs mt-1 text-amber-700">fem (+а)</div></div>

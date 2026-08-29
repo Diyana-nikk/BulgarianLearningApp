@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const personal = [
   { bg: "аз", translit: "az", en: "I" },
@@ -58,8 +59,9 @@ function Table({ rows }: { rows: { bg: string; translit: string; en: string }[] 
 
 function Note({ children }: { children: React.ReactNode }) {
   return (
-    <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-sm text-amber-900">
-      💡 {children}
+    <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-sm text-amber-900 flex items-start gap-2">
+      <Image src="/images/lightbulb.png" alt="" width={16} height={16} className="shrink-0 mt-0.5 object-contain" />
+      <span>{children}</span>
     </div>
   );
 }
@@ -72,7 +74,7 @@ export default function PronounsPage() {
       </div>
 
       <div>
-        <h1 className="text-2xl font-bold text-gray-800">🙋 Pronouns</h1>
+        <h1 className="text-2xl font-bold text-gray-800">Pronouns</h1>
         <p className="text-gray-500 text-sm mt-1">
           Bulgarian pronouns change depending on whether they are the subject (who acts) or object (who receives the action).
         </p>

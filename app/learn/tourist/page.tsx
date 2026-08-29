@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const sections = [
   {
-    title: "🍺 Ordering drinks & food",
+    title: "Ordering drinks & food",
     color: "bg-amber-50 border-amber-200",
     headerColor: "bg-amber-100",
     phrases: [
@@ -17,7 +17,7 @@ const sections = [
     ],
   },
   {
-    title: "🚇 Getting around",
+    title: "Getting around",
     color: "bg-sky-50 border-sky-200",
     headerColor: "bg-sky-100",
     phrases: [
@@ -32,7 +32,7 @@ const sections = [
     ],
   },
   {
-    title: "🚻 Essentials",
+    title: "Essentials",
     color: "bg-rose-50 border-rose-200",
     headerColor: "bg-rose-100",
     phrases: [
@@ -47,7 +47,7 @@ const sections = [
     ],
   },
   {
-    title: "💬 Communication",
+    title: "Communication",
     color: "bg-emerald-50 border-emerald-200",
     headerColor: "bg-emerald-100",
     phrases: [
@@ -62,7 +62,7 @@ const sections = [
     ],
   },
   {
-    title: "🏨 Accommodation",
+    title: "Accommodation",
     color: "bg-purple-50 border-purple-200",
     headerColor: "bg-purple-100",
     phrases: [
@@ -83,7 +83,7 @@ export default function TouristPage() {
       </div>
 
       <div>
-        <h1 className="text-2xl font-bold text-gray-800">✈️ Tourist Survival</h1>
+        <h1 className="text-2xl font-bold text-gray-800">Tourist Survival</h1>
         <p className="text-gray-500 text-sm mt-1">
           Essential phrases for visiting Bulgaria. Learn these and you will cover most situations — locals will love that you tried!
         </p>
@@ -91,7 +91,7 @@ export default function TouristPage() {
 
       {/* Pro tips */}
       <div className="bg-teal-50 border-2 border-teal-200 rounded-2xl px-5 py-4 text-sm text-teal-900 flex flex-col gap-2">
-        <div className="font-bold text-base">🎯 Quick wins before you go</div>
+        <div className="font-bold text-base">Quick wins before you go</div>
         <ul className="list-disc list-inside space-y-1 text-teal-800">
           <li><strong>Да</strong> (Da) = Yes &nbsp;·&nbsp; <strong>Не</strong> (Ne) = No — but Bulgarians nod for No and shake for Yes!</li>
           <li><strong>Моля</strong> (Molya) = Please / You're welcome</li>

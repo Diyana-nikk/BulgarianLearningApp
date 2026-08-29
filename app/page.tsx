@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const practice = [
   {
     href: "/flashcards",
-    emoji: "🃏",
+    image: "/images/flashcards.png",
     title: "Flashcards",
     desc: "Flip cards to learn vocabulary — tap to reveal the translation.",
     color: "bg-blue-50 border-blue-200 hover:bg-blue-100",
@@ -11,7 +12,7 @@ const practice = [
   },
   {
     href: "/quiz",
-    emoji: "🧠",
+    image: "/images/lightbulb.png",
     title: "Quiz",
     desc: "4-option multiple choice. Test what you know and track your score.",
     color: "bg-emerald-50 border-emerald-200 hover:bg-emerald-100",
@@ -19,7 +20,7 @@ const practice = [
   },
   {
     href: "/browse",
-    emoji: "📖",
+    image: "/images/magnifying-glass.png",
     title: "Browse",
     desc: "Search and browse all words with transliteration and example sentences.",
     color: "bg-violet-50 border-violet-200 hover:bg-violet-100",
@@ -30,7 +31,6 @@ const practice = [
 const lessons = [
   {
     href: "/learn/pronouns",
-    emoji: "🙋",
     title: "Pronouns",
     desc: "I, you, he, she, we — personal and possessive pronouns.",
     color: "bg-amber-50 border-amber-200 hover:bg-amber-100",
@@ -38,7 +38,6 @@ const lessons = [
   },
   {
     href: "/learn/tenses",
-    emoji: "⏱️",
     title: "Tenses",
     desc: "Present, past, and future — how to talk about time in Bulgarian.",
     color: "bg-sky-50 border-sky-200 hover:bg-sky-100",
@@ -46,7 +45,6 @@ const lessons = [
   },
   {
     href: "/learn/genders",
-    emoji: "⚖️",
     title: "Genders",
     desc: "Masculine, feminine, neuter — how Bulgarian nouns are categorised.",
     color: "bg-rose-50 border-rose-200 hover:bg-rose-100",
@@ -54,7 +52,6 @@ const lessons = [
   },
   {
     href: "/learn/articles",
-    emoji: "📌",
     title: "The — Definite Article",
     desc: "Bulgarian 'the' is a suffix — learn how it attaches to words.",
     color: "bg-orange-50 border-orange-200 hover:bg-orange-100",
@@ -62,7 +59,6 @@ const lessons = [
   },
   {
     href: "/learn/tourist",
-    emoji: "✈️",
     title: "Tourist Survival",
     desc: "Order beer, find the metro, ask for directions — essential phrases.",
     color: "bg-teal-50 border-teal-200 hover:bg-teal-100",
@@ -70,13 +66,24 @@ const lessons = [
   },
 ];
 
-function Card({ href, emoji, title, desc, color, accent }: typeof practice[0]) {
+interface CardProps {
+  href: string;
+  image?: string;
+  title: string;
+  desc: string;
+  color: string;
+  accent: string;
+}
+
+function Card({ href, image, title, desc, color, accent }: CardProps) {
   return (
     <Link
       href={href}
       className={`flex items-center gap-4 border-2 rounded-2xl px-5 py-4 transition-colors ${color}`}
     >
-      <span className="text-3xl shrink-0">{emoji}</span>
+      {image && (
+        <Image src={image} alt="" width={36} height={36} className="shrink-0 object-contain" />
+      )}
       <div className="min-w-0">
         <div className={`font-bold text-base ${accent}`}>{title}</div>
         <div className="text-gray-600 text-sm mt-0.5 leading-snug">{desc}</div>
@@ -95,7 +102,7 @@ export default function Home() {
           Хайде!
         </h1>
         <p className="text-gray-500 text-base">
-          <em>"Let's go!"</em> — your Bulgarian adventure starts here 🇧🇬
+          <em>"Let's go!"</em> — your Bulgarian adventure starts here
         </p>
       </div>
 

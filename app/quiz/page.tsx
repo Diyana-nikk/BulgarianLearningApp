@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { loadWords, shuffle, CATEGORIES, type Word } from "@/lib/words";
 
 interface Question {
@@ -75,7 +76,9 @@ export default function QuizPage() {
     const pct = Math.round((score / questions.length) * 100);
     return (
       <div className="flex flex-col items-center gap-6 text-center py-8 sm:py-12">
-        <div className="text-5xl sm:text-6xl">{pct >= 80 ? "🏆" : pct >= 50 ? "👍" : "📚"}</div>
+        {pct < 50 && (
+          <Image src="/images/book.png" alt="" width={64} height={64} className="object-contain" />
+        )}
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Quiz complete!</h2>
         <p className="text-lg sm:text-xl text-gray-600">
           You scored <span className="font-bold text-blue-600">{score}/{questions.length}</span> ({pct}%)
@@ -151,7 +154,7 @@ export default function QuizPage() {
       {selected !== null && (
         <div className="flex flex-col items-center gap-3">
           {selected === q.correct ? (
-            <p className="text-green-700 font-semibold">Correct! 🎉</p>
+            <p className="text-green-700 font-semibold">Correct!</p>
           ) : (
             <p className="text-red-600 font-semibold">
               Incorrect — the answer is <span className="font-bold">{q.correct}</span>
